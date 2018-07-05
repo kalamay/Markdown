@@ -2,8 +2,8 @@ import Cocoa
 import WebKit
 
 class ViewController: NSViewController, WKNavigationDelegate {
-    
-    @IBOutlet weak var webView: WKWebView!
+	
+	@IBOutlet weak var webView: WKWebView!
 	@IBOutlet weak var gradView: NSView!
 	
 	var color = NSColor.white
@@ -28,10 +28,10 @@ class ViewController: NSViewController, WKNavigationDelegate {
 		ready = true
 		updateHTML()
 	}
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.window?.backgroundColor = NSColor.white
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		self.view.window?.backgroundColor = NSColor.white
 		
 		let gradient = CAGradientLayer()
 		gradient.colors = [color.cgColor.copy(alpha: 0.0)!, color.cgColor]
@@ -42,18 +42,18 @@ class ViewController: NSViewController, WKNavigationDelegate {
 		if let url = url {
 			self.webView.loadFileURL(url, allowingReadAccessTo: url)
 		}
-    }
-    
-    override var representedObject: Any? {
-        didSet { updateHTML() }
-    }
+	}
+	
+	override var representedObject: Any? {
+		didSet { updateHTML() }
+	}
 }
 
 class WindowController: NSWindowController {
 	var color = NSColor.white
 	
-    override func windowDidLoad() {
-        super.windowDidLoad()
-        self.window?.backgroundColor = color
-    }
+	override func windowDidLoad() {
+		super.windowDidLoad()
+		self.window?.backgroundColor = color
+	}
 }
