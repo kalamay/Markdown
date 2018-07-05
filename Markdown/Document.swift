@@ -90,8 +90,8 @@ class Document: NSDocument {
 		}
 		catch {}
 		
-        if m.contains(.link) {
+		if m.contains(.link) {
 			watch(url: url)
-        }
+		}
     }
 }
